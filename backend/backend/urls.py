@@ -15,4 +15,7 @@ urlpatterns = [
 
     # Built-in DRF auth URLs (for login/logout in browser)
     path('api/auth/', include('rest_framework.urls')),
+
+    # Forward all /api/ requests to the api app
+    path('api/', include('api.urls')),
 ]

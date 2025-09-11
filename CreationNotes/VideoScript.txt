@@ -1,4 +1,14 @@
-#1
+Complete: 
+#1 – Introduction & Overview, 
+#2 – Project Demo & Expectations, 
+#3 – Set Up the Backend (Windows), 
+#4 – Configure settings.py for Django Backend, 
+#5 – JWT Basics & User Registration Setup (Modern Django + DRF), 
+#6 — Set up URLs, JWT Authentication, and Test User Registration,
+#7 – Creating a Note Model and Serializer with User Linking,
+#8 – 
+
+#1 – Introduction & Overview: 
 in this video you'll learn how to use
 Python and JavaScript to create a full
 stack web application we'll be using
@@ -464,7 +474,9 @@ backend directory we've messed with the
 settings
 
 
-#5
+#5 – JWT Basics & User Registration Setup (Modern Django + DRF), 
+#6 — Set up URLs, JWT Authentication, and Test User Registration:
+
  what I want to do now is
 quickly explain to you how JWT tokens
 work and then we'll start implementing
@@ -735,7 +747,7 @@ create a new user okay so that's it for
 the view
 
 
-#6
+#7 
  now that we've done that we're
 going to go to urls.py within this
 backend directory so notice we moved
@@ -943,7 +955,8 @@ data to authenticated users
 
 
 
-#7 so let's go
+#7 – Creating a Note Model and Serializer with User Linking:
+ so let's go
 back to vs code and let's start writing
 what we need for creating different
 notes so I'm going to clear this here
@@ -1099,6 +1112,8 @@ them and in this case author is one of
 those where we want that to be set by
 the back end not by someone just
 deciding who the author should be okay
+
+#8 – Creating Views for Listing, Creating, and Deleting Notes
 so now that we have our serializer and
 our model we're going to go into views
 and we're going to make some views for
@@ -1280,7 +1295,10 @@ what we'll actually do sorry is we'll
 specify a note we want to delete and it
 will automatically delete it for us if
 we're authenticated which is what we
-need to be so now that we have these
+need to be 
+
+#9:
+so now that we have these
 views what we need to do is we need to
 set up some URLs for them but this time
 I'm going to set up the URLs in this API
@@ -1364,6 +1382,7 @@ need to actually migrate so let's go
 ahead and migrate and you'll see that
 this works okay now we're going to run
 our code so python manage.py run server
+
 and we're going to test this out so
 let's open up this
 view okay so I need to actually go over
@@ -1403,7 +1422,11 @@ you wouldn't be passing the correct
 access token so just bear with me here
 guys that's going to wrap up the back
 end now what we're going to do is go
-over and write the front end all right
+over and write the front end
+
+
+#10:
+all right
 so now we are moving on and we are
 working on the front end now this is
 going to be in react so what I've done
