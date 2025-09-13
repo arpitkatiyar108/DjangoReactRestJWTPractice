@@ -6,7 +6,12 @@ Complete:
 #5 – JWT Basics & User Registration Setup (Modern Django + DRF), 
 #6 — Set up URLs, JWT Authentication, and Test User Registration,
 #7 – Creating a Note Model and Serializer with User Linking,
-#8 – 
+#8 – Creating Views for Listing, Creating, and Deleting Notes
+#9 – Setting Up URLs and Connecting Backend Routes,
+#10 – React Frontend Setup with Vite and Axios Interceptor
+#11 - React Protected Route 
+#12 - React Navigation & Page Stubs
+#13 -  Building a Generic Form (Login & Register)
 
 #1 – Introduction & Overview: 
 in this video you'll learn how to use
@@ -1297,7 +1302,7 @@ will automatically delete it for us if
 we're authenticated which is what we
 need to be 
 
-#9:
+#9 – Setting Up URLs and Connecting Backend Routes: 
 so now that we have these
 views what we need to do is we need to
 set up some URLs for them but this time
@@ -1425,7 +1430,7 @@ end now what we're going to do is go
 over and write the front end
 
 
-#10:
+#10 – React Frontend Setup with Vite and Axios Interceptor:
 all right
 so now we are moving on and we are
 working on the front end now this is
@@ -1655,7 +1660,10 @@ on we're actually going to use this API
 object rather than using axios by
 default uh to send all of our different
 requests so the authorization token will
-automatically be added for us okay so
+automatically be added for us 
+
+#11 - React Protected Route with Secure HttpOnly Cookies
+okay so
 now that we've done that we actually
 need a way to get our token right and
 also to protect our different roots on
@@ -1897,7 +1905,11 @@ so you can kind of read some of it I'll
 just slowly scroll through it of course
 you can also copy this directly from the
 GitHub okay so that is our protected
-root component now what we're going to
+root component
+
+
+#12 - React Navigation & Page Stubs: 
+now what we're going to
 do is we're going to stub some pages
 that we're going to need and we're going
 to set up the navigation for our
@@ -2086,7 +2098,10 @@ go to something like some random string
 it brings us to not found okay so that's
 working so let's go ahead and shut this
 down and start writing some more of our
-components okay so first component that
+components 
+
+#13 - Building a Generic Form (Login & Register):
+okay so first component that
 I think is pretty easy to get out of the
 way is the 404 or the not found
 component so let's write that one so for
@@ -2330,6 +2345,9 @@ been register if it was register there's
 no tokens that we need to set in order
 to get the tokens we actually need to
 log in with our new registered account
+
+
+#14
 okay so that's our form again we can
 kind of zoom out a little bit so you can
 read it a little bit better now there's
@@ -2482,7 +2500,175 @@ actually do something so we're able to
 log in we're able to register the form
 is built I would say the hard part is
 done and now we need to start actually
-interacting with our notes so that's
+interacting with our notes 
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+}
+
+.form-input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-button {
+  width: 95%;
+  padding: 10px;
+  margin: 20px 0;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.form-button:hover {
+  background-color: #0056b3;
+}
+
+Home.css
+/* Container for the whole page */
+div {
+  font-family: Arial, sans-serif;
+}
+
+/* Styles for the notes section */
+.notes-section {
+  margin-bottom: 2rem;
+}
+
+.notes-section h2 {
+  color: #333;
+  font-size: 24px;
+}
+
+/* Styles for individual notes - assuming your Note component has some container element */
+.note {
+  background-color: #f9f9f9;
+  border-left: 5px solid #007bff;
+  margin: 10px 0;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+/* Styles for the form section */
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: auto;
+}
+
+form h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+form label {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+form input[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+form input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+LoadingIndicator
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  border: 5px solid #f3f3f3; /* Light grey */
+  border-top: 5px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+Note.css
+.note-container {
+  padding: 10px;
+  margin: 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.note-title {
+  color: #333;
+}
+
+.note-content {
+  color: #666;
+}
+
+.note-date {
+  color: #999;
+  font-size: 0.8rem;
+}
+
+.delete-button {
+  background-color: #f44336; /* Red */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.delete-button:hover {
+  background-color: #d32f2f; /* Darker red */
+}
+
+#15
+so that's
 going to involve writing some code
 inside of the homepage here so let's
 start doing that so from our homepage
