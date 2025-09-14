@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import API from "../api";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
+import LoadingIndicator from "./LoadingIndicator";
+import "../styles/Form.css";
 export default function Form({ route, method }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -63,7 +65,7 @@ export default function Form({ route, method }) {
         placeholder="Password"
         required
       />
-
+      {loading && <LoadingIndicator />}
       {/* Submit Button */}
       <button
         className="w-full p-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-50"
